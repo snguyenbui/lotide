@@ -1,10 +1,11 @@
 
 const flatten = function(flattenArray) {
-
+  
   let flattenOutput = [];
+  for (flattenIndex = 0; flattenIndex < flattenArray.length; flattenIndex++) {
+ 
   let nestedArrays = [];
 
-  for (flattenIndex = 0; flattenIndex < flattenArray.length; flattenIndex++) {
     if(!Array.isArray(flattenArray[flattenIndex])){
       flattenOutput.push(flattenArray[flattenIndex]);
     } else if (Array.isArray(flattenArray[flattenIndex])) {
@@ -14,7 +15,6 @@ const flatten = function(flattenArray) {
       }
     }
   }
-  console.log(nestedArrays);
   console.log(flattenOutput);
 }
 
