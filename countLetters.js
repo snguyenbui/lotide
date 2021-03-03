@@ -10,11 +10,16 @@ const assertEqual = function(actual, expected) {
 
 const countLetters = function (sentence) {
   letterCount = {};
-  for (const letter in sentence) {
-    if (letterCount[letter]){
-      letterCount[letter] += 1;
-    } else {
-      letterCount[letter] = 1;
+  for (const letter of sentence) {
+    if (letter !== ' '){
+      if (letterCount[letter]){
+        letterCount[letter] += 1;
+      } else {
+        letterCount[letter] = 1;
+      }
     }
   }
+  return letterCount;
 }
+
+console.log(countLetters("lighthouse in the house"));
