@@ -4,8 +4,8 @@ const eqArrays = function(firstArray, secondArray) {
     return false;
   }
 
-  for (let arrayIndex = 0; arrayIndex < firstArray.length; arrayIndex++) {
-    if (firstArray[arrayIndex] !== secondArray[arrayIndex]) {
+  for (let elem in firstArray) {
+    if (firstArray[elem] !== secondArray[elem]) {
       return false;
     }
   }
