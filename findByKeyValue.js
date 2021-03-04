@@ -2,22 +2,22 @@
 const assertEqual = function(actual, expected) {
 
   if (actual === expected) {
-    console.log(`✅ Assertion Passed: + ${actual} === ${expected}`);
+    console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
   } else {
-    console.log(`🛑 Assertion Failed: + ${actual} !== ${expected}`);
+    console.log(`🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
 };
 
-const findKeyByValue = function (keyValuePairs, targetValue) {
-  for (item in keyValuePairs){
+const findKeyByValue = function(keyValuePairs, targetValue) {
+  for (let item in keyValuePairs) {
     if (keyValuePairs[item] === targetValue) {
       return item;
     }
   }
-}
+};
 
-const bestTVShowsByGenre = { 
-  sci_fi: "The Expanse",
+const bestTVShowsByGenre = {
+  sciFi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
   drama:  "The Wire"
 };

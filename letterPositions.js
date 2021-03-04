@@ -4,8 +4,8 @@ const eqArrays = function(firstArray, secondArray) {
     return false;
   }
 
-  for (let arrayIndex = 0; arrayIndex < firstArray.length; arrayIndex++) {
-    if (firstArray[arrayIndex] !== secondArray[arrayIndex]) {
+  for (let elem in firstArray) {
+    if (firstArray[elem] !== secondArray[elem]) {
       return false;
     }
   }
@@ -13,7 +13,7 @@ const eqArrays = function(firstArray, secondArray) {
   return true;
 };
 
-const assertArraysEqual = function (actual, expected) {
+const assertArraysEqual = function(actual, expected) {
 
   if (eqArrays(actual, expected)) {
     console.log(`Assertion Passed: ${actual} === ${expected}`);
@@ -26,8 +26,8 @@ const letterPositions = function(sentence) {
   const results = {};
   let positionCounter = 0;
   for (const letter of sentence) {
-    if (sentence[letter] !== ' '){
-      if (results[letter]){
+    if (sentence[letter] !== ' ') {
+      if (results[letter]) {
         results[letter].push(positionCounter);
       } else {
         results[letter] = [positionCounter];
@@ -38,6 +38,6 @@ const letterPositions = function(sentence) {
   return results;
 };
 
-test = letterPositions('hello')
+const test = letterPositions('hello');
 console.log(test);
 assertArraysEqual(test.h, [0]);

@@ -13,7 +13,7 @@ const eqArrays = function(firstArray, secondArray) {
   return true;
 };
 
-const assertArraysEqual = function (actual, expected) {
+const assertArraysEqual = function(actual, expected) {
 
   if (eqArrays(actual, expected)) {
     console.log(`Assertion Passed: ${actual} === ${expected}`);
@@ -22,14 +22,13 @@ const assertArraysEqual = function (actual, expected) {
   }
 };
 
-const without = function (source, itemsToRemove) {
+const without = function(source, itemsToRemove) {
 
   let outputArray = [];
-  for (let sourceIndex = 0; sourceIndex < source.length; sourceIndex++)
-  {
+  for (let sourceIndex = 0; sourceIndex < source.length; sourceIndex++) {
     let validItem = true;
-    for (let itemIndex = 0; itemIndex < itemsToRemove.length; itemIndex++){
-      if (itemsToRemove[itemIndex] === source[sourceIndex]){
+    for (let itemIndex = 0; itemIndex < itemsToRemove.length; itemIndex++) {
+      if (itemsToRemove[itemIndex] === source[sourceIndex]) {
         validItem = false;
       }
     }

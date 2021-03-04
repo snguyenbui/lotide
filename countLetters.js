@@ -2,17 +2,17 @@
 const assertEqual = function(actual, expected) {
 
   if (actual === expected) {
-    console.log(`✅ Assertion Passed: + ${actual} === ${expected}`);
+    console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
   } else {
-    console.log(`🛑 Assertion Failed: + ${actual} !== ${expected}`);
+    console.log(`🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
 };
 
-const countLetters = function (sentence) {
-  letterCount = {};
+const countLetters = function(sentence) {
+  const letterCount = {};
   for (const letter of sentence) {
-    if (letter !== ' '){
-      if (letterCount[letter]){
+    if (letter !== ' ') {
+      if (letterCount[letter]) {
         letterCount[letter] += 1;
       } else {
         letterCount[letter] = 1;
@@ -20,6 +20,6 @@ const countLetters = function (sentence) {
     }
   }
   return letterCount;
-}
+};
 
 console.log(countLetters("lighthouse in the house"));

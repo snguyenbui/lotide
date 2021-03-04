@@ -13,7 +13,7 @@ const eqArrays = function(firstArray, secondArray) {
   return true;
 };
 
-const assertArraysEqual = function (actual, expected) {
+const assertArraysEqual = function(actual, expected) {
 
   if (eqArrays(actual, expected)) {
     console.log(`Assertion Passed: ${actual} === ${expected}`);
@@ -22,7 +22,7 @@ const assertArraysEqual = function (actual, expected) {
   }
 };
 
-const middle = function (dataArray) {
+const middle = function(dataArray) {
   
   let isEven = isOddOrEven(dataArray.length);
   
@@ -31,21 +31,21 @@ const middle = function (dataArray) {
   }
 
   if (isEven) {
-    return [dataArray[dataArray.length/2 - 1], dataArray[dataArray.length/2]];
+    return [dataArray[dataArray.length / 2 - 1], dataArray[dataArray.length / 2]];
   } else {
-    return [dataArray[Math.floor(dataArray.length/2)]];
+    return [dataArray[Math.floor(dataArray.length / 2)]];
   }
-}
+};
 
-const isOddOrEven = function (arrayLength) {
-  if (arrayLength <= 2) { 
+const isOddOrEven = function(arrayLength) {
+  if (arrayLength <= 2) {
     return null;
-  } else if (arrayLength % 2 === 0){
+  } else if (arrayLength % 2 === 0) {
     return true;
   } else {
     return false;
   }
-}
+};
 
 assertArraysEqual(middle([1]), []);
 assertArraysEqual(middle([1, 2]), []);
