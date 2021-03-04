@@ -1,21 +1,49 @@
+const eqArrays = function(firstArray, secondArray) {
 
-const flatten = function(flattenArray) {
-  
-  let flattenOutput = [];
-  for (flattenIndex = 0; flattenIndex < flattenArray.length; flattenIndex++) {
- 
-  let nestedArrays = [];
+  if (firstArray.length !== secondArray.length) {
+    return false;
+  }
 
-    if(!Array.isArray(flattenArray[flattenIndex])){
-      flattenOutput.push(flattenArray[flattenIndex]);
-    } else if (Array.isArray(flattenArray[flattenIndex])) {
-      nestedArrays = flattenArray[flattenIndex];
-      for (nestedIndex = 0; nestedIndex < nestedArrays.length; nestedIndex++) {
-        flattenOutput.push(nestedArrays[nestedIndex]);
-      }
+  for (let elem in firstArray) {
+    if (firstArray[elem] !== secondArray[elem]) {
+      return false;
     }
   }
-  console.log(flattenOutput);
-}
 
-flatten([1, 2, [3, 4], 5, [6]]);
+  return true;
+};
+
+const assertArraysEqual = function(actual, expected) {
+
+  if (eqArrays(actual, expected)) {
+    console.log(`Assertion Passed: ${actual} === ${expected}`);
+  } else {
+    console.log(`Assertion Failed: ${actual} !== ${expected}`);
+  }
+};
+
+let flattenOutput = [];
+let recursionFlag = false;
+
+const flatten = function(flattenArray) {
+
+  if (!recursionFlag) {
+    flattenOutput = [];
+  }
+
+  for (let elem of flattenArray) {
+    if (!Array.isArray(elem)) {
+      flattenOutput.push(elem);
+    } else {
+      recursionFlag = true;
+      flatten(elem);
+    }
+  }
+
+  recursionFlag = false;
+  
+  return flattenOutput;
+};
+
+assertArraysEqual(flatten([1, 2, [3, [4]], 5, [6]]), [1, 2, 3, 4, 5, 6]);
+assertArraysEqual(flatten([1]), [1]);
