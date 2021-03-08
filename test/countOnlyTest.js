@@ -24,7 +24,7 @@ const expected = {
   "Fang": 2,
 };
 
-describe('#countLetters', () => {
+describe('#countOnly', () => {
   it(`returns { "Jason": 1, "Fang": 2, } for ([${input}], { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false })`, () => {
     assert.deepEqual(countOnly(input, key), expected);
   });
