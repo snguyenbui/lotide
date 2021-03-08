@@ -1,27 +1,3 @@
-const eqArrays = function(firstArray, secondArray) {
-
-  if (firstArray.length !== secondArray.length) {
-    return false;
-  }
-
-  for (let elem in firstArray) {
-    if (firstArray[elem] !== secondArray[elem]) {
-      return false;
-    }
-  }
-
-  return true;
-};
-
-const assertArraysEqual = function(actual, expected) {
-
-  if (eqArrays(actual, expected)) {
-    console.log(`Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
 const middle = function(dataArray) {
   
   let isEven = isOddOrEven(dataArray.length);
@@ -47,9 +23,4 @@ const isOddOrEven = function(arrayLength) {
   }
 };
 
-assertArraysEqual(middle([1]), []);
-assertArraysEqual(middle([1, 2]), []);
-assertArraysEqual(middle([1, 2, 3]), [2]);
-assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
+module.exports = middle;
