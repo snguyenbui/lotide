@@ -1,13 +1,12 @@
 {
-  "name": "lotide",
+  "name": "@snguyenbui/lotide",
   "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
+  "description": "A mini clone of the [Lodash](https://lodash.com) library",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
   "dependencies": {
-    "chalk": "^4.1.0"
   },
   "devDependencies": {},
   "scripts": {
@@ -17,7 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/snguyenbui/lotide.git"
   },
-  "author": "",
+  "author": "snguyenbui",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/snguyenbui/lotide/issues"
