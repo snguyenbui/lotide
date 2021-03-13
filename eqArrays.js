@@ -7,8 +7,15 @@ const eqArrays = function(firstArray, secondArray) {
   }
 
   for (let elem in firstArray) {
-    if (firstArray[elem] !== secondArray[elem]) {
-      return false;
+    console.log(firstArray[elem], secondArray[elem])
+    if (Array.isArray(firstArray[elem]) || Array.isArray(secondArray[elem])) {
+      if (!eqArrays(firstArray[elem], secondArray[elem])) {
+        return false;
+      }
+    } else {
+      if (firstArray[elem] !== secondArray[elem]) {
+        return false;
+      }
     }
   }
 
@@ -16,3 +23,8 @@ const eqArrays = function(firstArray, secondArray) {
 };
 
 module.exports = eqArrays;
+
+// console.log(eqArrays([[2, 3], [4]], [[2, 3], [4]])) // => true
+
+// console.log(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]])) // => false
+// console.log(eqArrays([[2, 3], [4]], [[2, 3], 4])) // => false
